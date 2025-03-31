@@ -1,6 +1,8 @@
 # LLM Coding Assistant
 
-This project is a Python-based coding assistant that utilizes a language model to help users analyze and interact with Python code. The assistant provides a chat interface where users can ask questions about their code, receive suggestions, and get code snippets.
+This project is a simple Python-based coding assistant that leverages a language model to help users analyse and interact with Python code. It provides a chat interface where users can ask questions, receive suggestions, and obtain relevant code snippets.
+
+The assistant reads all `.py` files from a specified folder and its subfolders, compiles their contents into a single string, and sends it as a system message to a language model, enabling interactive, chat-based support.
 
 ## Folder Structure
 LLM_coding_assistant
@@ -9,7 +11,6 @@ LLM_coding_assistant
 ├── extraction_module.py
 ├── main.py
 └── pycache/
-
 
 
 ## Features
