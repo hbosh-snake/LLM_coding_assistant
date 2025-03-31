@@ -10,8 +10,8 @@ def launch_chat_interface(folder):
     Launches the Gradio chat interface. The code context is extracted from the provided folder.
     """
     # Extract the complete code context (folder schema and file contents)
-    CODE_CONTEXT = extract_py_files(folder)
-    system_message_with_context = f"{SYSTEM_MESSAGE}\n{CODE_CONTEXT}"
+    code_context = extract_py_files(folder)
+    system_message_with_context = f"{SYSTEM_MESSAGE}\n{code_context}"
 
     load_dotenv()
 
@@ -63,7 +63,7 @@ def launch_chat_interface(folder):
 
         with gr.Row(scale=1):
             with gr.Column(scale=1):  # Left column: one third of the width
-                gr.Markdown("## Your Title Here")
+                gr.Markdown(GRADIO_TITLE)
                 user_input = gr.Textbox(placeholder="Enter your message here...", label="Your message")
             with gr.Column(scale=2, elem_id="second_column"):  # Right column: two thirds of the width
                 chatbot = gr.Chatbot(type='messages', elem_id="chatbot")
@@ -71,10 +71,4 @@ def launch_chat_interface(folder):
 
         user_input.submit(generate_response, inputs=[user_input, state], outputs=[user_input, chatbot])
 
-    demo.launch(debug=True)
-
-
-if __name__ == "__main__":
-    # For testing purposes you might set a default folder or pass one via command-line.
-    folder_path = "path/to/your/folder"  # Replace with your folder path or use command-line arguments.
-    launch_chat_interface(folder_path)
+    demo.launch()

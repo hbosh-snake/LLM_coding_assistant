@@ -54,9 +54,5 @@ def extract_py_files(root_folder):
     full_content = f"Folder Structure:\n{folder_schema}\n\n" + "\n\n".join(file_contents)
     return full_content
 
-
-# Example usage:
 if __name__ == "__main__":
-    folder_path = r"C:\Users\Emanuele\PycharmProjects\CEMS_Mapping_LLM"  # Replace with your actual folder path
-    content = extract_py_files(folder_path)
-    print(content)
+    print(extract_py_files(r"example/folder"))
