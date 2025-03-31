@@ -1,5 +1,5 @@
 # List of folder names to skip during the file search.
-SKIP_FOLDERS = [".venv", "build", "dist", ".git", ".idea"]
+SKIP_FOLDERS = [".venv", "build", "dist", ".git", ".idea", ".env"]
 
 # LLM configuration
 LLM_MODEL = "gpt-4o-mini"
