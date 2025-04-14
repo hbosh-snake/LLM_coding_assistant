@@ -18,7 +18,7 @@ def launch_chat_interface(folder):
     # Initialise the LLM using LangChain's OpenAI integration.
     llm = ChatOpenAI(
         model_name=LLM_MODEL,
-        temperature=0,
+        # temperature=0,
     )
 
     def generate_response(user_message, chat_history):
@@ -71,4 +71,7 @@ def launch_chat_interface(folder):
 
         user_input.submit(generate_response, inputs=[user_input, state], outputs=[user_input, chatbot])
 
-    demo.launch()
+    demo.launch(
+        # server_name="0.0.0.0",
+        server_port=7859,
+    )

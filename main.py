@@ -8,7 +8,9 @@ def main():
     args = parser.parse_args()
 
     # Launch the chat interface using the provided folder
-    launch_chat_interface(folder=args.folder)
+    launch_chat_interface(
+        folder=args.folder,
+    )
 
 
 if __name__ == "__main__":

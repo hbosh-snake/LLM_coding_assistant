@@ -2,7 +2,7 @@
 SKIP_FOLDERS = [".venv", "build", "dist", ".git", ".idea", ".env"]
 
 # LLM configuration
-LLM_MODEL = "gpt-4o-mini"
+LLM_MODEL = "o3-mini"
 
 # Gradio interface configuration
 GRADIO_TITLE = "Code Assistant Chat"
